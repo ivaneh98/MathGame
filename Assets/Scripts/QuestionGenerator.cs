@@ -28,7 +28,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(0, 20);
+                                num = Random.Range(correctAnswer - 3, correctAnswer + 3);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -36,7 +36,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " + " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " + " + y + " = ?", answers, correctAnswer.ToString());
                     case 1://-
                         x = Random.Range(0, 10);
                         y = Random.Range(0, 10);
@@ -47,7 +47,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(0, 20);
+                                num = Random.Range(correctAnswer - 3, correctAnswer + 3);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -55,7 +55,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " - " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " - " + y + " = ?", answers, correctAnswer.ToString());
                     case 2://*
                         x = Random.Range(2, 10);
                         y = Random.Range(2, 10);
@@ -66,7 +66,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(4, 100);
+                                num = Random.Range(correctAnswer - 3, correctAnswer + 3);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -74,7 +74,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " * " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " * " + y + " = ?", answers, correctAnswer.ToString());
                     default:// "/"
                         x = Random.Range(2, 10);
                         y = Random.Range(2, 10);
@@ -86,14 +86,14 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(2, 10);
+                                num = Random.Range(correctAnswer - 3, correctAnswer + 3);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
 
                         }
                         Shuffle(answers);
-                        return new Question(x + " / " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " / " + y + " = ?", answers, correctAnswer.ToString());
                 }
             case 1://lvl2
                 switch (sign)
@@ -109,7 +109,8 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(20, 200);
+                                num = Random.Range(correctAnswer - 10, correctAnswer + 10);
+
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -117,7 +118,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " + " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " + " + y + " = ?", answers, correctAnswer.ToString());
                     case 1://-
                         x = Random.Range(10, 100);
                         y = Random.Range(10, 100);
@@ -128,7 +129,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(20, 200);
+                                num = Random.Range(correctAnswer - 10, correctAnswer + 10);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -136,7 +137,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " - " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " - " + y + " = ?", answers, correctAnswer.ToString());
                     case 2://*
                         x = Random.Range(10, 100);
                         y = Random.Range(2, 10);
@@ -147,7 +148,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(x, x * y);
+                                num = Random.Range(correctAnswer - 10, correctAnswer + 10);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -155,7 +156,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " * " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " * " + y + " = ?", answers, correctAnswer.ToString());
                     default:// "/"
                         x = Random.Range(10, 100);
                         y = Random.Range(2, 10);
@@ -167,14 +168,14 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(correctAnswer, x);
+                                num = Random.Range(correctAnswer - 10, correctAnswer + 10);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
 
                         }
                         Shuffle(answers);
-                        return new Question(x + " / " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " / " + y + " = ?", answers, correctAnswer.ToString());
                 }
             case 2://lvl3
                 switch (sign)
@@ -190,7 +191,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(200, 2000);
+                                num = Random.Range(correctAnswer - 20, correctAnswer + 20);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -198,7 +199,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " + " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " + " + y + " = ?", answers, correctAnswer.ToString());
                     case 1://-
                         x = Random.Range(100, 1000);
                         y = Random.Range(100, 1000);
@@ -209,7 +210,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(200, 2000);
+                                num = Random.Range(correctAnswer - 20, correctAnswer + 20);
 
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
@@ -218,7 +219,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " - " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " - " + y + " = ?", answers, correctAnswer.ToString());
                     case 2://*
                         x = Random.Range(50, 111);
                         y = Random.Range(2, 10);
@@ -229,7 +230,8 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(x, x * y);
+                                num = Random.Range(correctAnswer - 20, correctAnswer + 20);
+
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -237,7 +239,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " * " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " * " + y + " = ?", answers, correctAnswer.ToString());
                     default:// "/"
                         x = Random.Range(50, 111);
                         y = Random.Range(2, 10);
@@ -249,14 +251,15 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(correctAnswer, x);
+                                num = Random.Range(correctAnswer - 20, correctAnswer + 20);
+
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
 
                         }
                         Shuffle(answers);
-                        return new Question(x + " / " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " / " + y + " = ?", answers, correctAnswer.ToString());
                 }
             case 3://lvl4
                 switch (sign)
@@ -272,7 +275,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(2000, 20000);
+                                num = Random.Range(correctAnswer - 50, correctAnswer + 50);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -280,7 +283,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " + " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " + " + y + " = ?", answers, correctAnswer.ToString());
                     case 1://-
                         x = Random.Range(1000, 10000);
                         y = Random.Range(1000, 10000);
@@ -291,7 +294,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(2000, 20000);
+                                num = Random.Range(correctAnswer - 50, correctAnswer + 50);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -299,7 +302,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " - " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " - " + y + " = ?", answers, correctAnswer.ToString());
                     case 2://*
                         x = Random.Range(500, 1111);
                         y = Random.Range(2, 10);
@@ -310,7 +313,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(x, x * y);
+                                num = Random.Range(correctAnswer - 50, correctAnswer + 50);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -318,7 +321,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " * " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " * " + y + " = ?", answers, correctAnswer.ToString());
                     default:// "/"
                         x = Random.Range(500, 1111);
                         y = Random.Range(2, 10);
@@ -330,14 +333,14 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(correctAnswer, x);
+                                num = Random.Range(correctAnswer - 50, correctAnswer + 50);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
 
                         }
                         Shuffle(answers);
-                        return new Question(x + " / " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " / " + y + " = ?", answers, correctAnswer.ToString());
                 }
             default://lvl5
                 switch (sign)
@@ -353,7 +356,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(20000, 200000);
+                                num = Random.Range(correctAnswer - 100, correctAnswer + 100);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -361,7 +364,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " + " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " + " + y + " = ?", answers, correctAnswer.ToString());
                     case 1://-
                         x = Random.Range(10000, 100000);
                         y = Random.Range(10000, 100000);
@@ -372,7 +375,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(20000, 200000);
+                                num = Random.Range(correctAnswer - 100, correctAnswer + 100);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -380,7 +383,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " - " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " - " + y + " = ?", answers, correctAnswer.ToString());
                     case 2://*
                         x = Random.Range(5000, 11111);
                         y = Random.Range(2, 10);
@@ -391,7 +394,7 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(x, x * y);
+                                num = Random.Range(correctAnswer - 100, correctAnswer + 100);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
@@ -399,7 +402,7 @@ public class QuestionGenerator : MonoBehaviour
                         }
                         Shuffle(answers);
 
-                        return new Question(x + " * " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " * " + y + " = ?", answers, correctAnswer.ToString());
                     default:// "/"
                         x = Random.Range(5000, 11111);
                         y = Random.Range(2, 10);
@@ -411,17 +414,16 @@ public class QuestionGenerator : MonoBehaviour
                             int num;
                             do
                             {
-                                num = Random.Range(correctAnswer, x);
+                                num = Random.Range(correctAnswer - 100, correctAnswer + 100);
                             }
                             while (num == correctAnswer || answers.Contains(num.ToString()));
                             answers.Add(num.ToString());
 
                         }
                         Shuffle(answers);
-                        return new Question(x + " / " + y + " = ", answers, correctAnswer.ToString());
+                        return new Question(x + " / " + y + " = ?", answers, correctAnswer.ToString());
                 }
         }
-
     }
     public static void Shuffle<T>(List<T> list)
     {
